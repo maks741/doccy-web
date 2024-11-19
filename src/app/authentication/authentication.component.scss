@@ -1,0 +1,115 @@
+@mixin background-image($url) {
+  background-image: url($url);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+@mixin align-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin align-start {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+body {
+  background: linear-gradient(90deg, rgba(31,10,57,1) 0%, rgba(25,11,62,1) 53%, rgba(6,5,36,1) 73%);
+  @include align-center
+}
+
+#login {
+  @include background-image("../../assets/images/authentication/login-form-background.png");
+  width: 60%;
+  height: 75%;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: -30px 30px 20px rgba(black, 0.2);
+}
+
+#login__form {
+  background-color: rgb(30, 30, 30);
+  width: 40%;
+  height: 100%;
+  @include align-start;
+  flex-direction: column;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  gap: 10%;
+
+  &_inputs {
+    width: 100%;
+    height: 50%;
+    @include align-center;
+    flex-direction: column;
+    gap: 10px;
+
+    & input {
+      $font-color: rgb(200, 200, 200);
+
+      background-color: transparent;
+      width: 70%;
+      height: 3rem;
+
+      border-width: 2px;
+      border-color: transparent transparent $font-color transparent;
+
+      font-size: 16px;
+      font-family: Verdana, serif;
+      color: $font-color;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    & input:user-invalid {
+      border-color: transparent transparent rgb(199, 20, 70) transparent;
+      border-radius: 5px;
+      animation: shake 0.3s;
+    }
+
+    @keyframes shake {
+      25% {transform: translateX(4px)}
+      50% {transform: translateX(-4px)}
+      75% {transform: translateX(4px)}
+    }
+
+    & input[type="submit"] {
+      background: linear-gradient(90deg, rgba(136,57,237,1) 0%, rgba(98,47,229,1) 53%, rgba(58,49,239,1) 73%);
+      width: 70%;
+      min-height: 3rem;
+      border: none;
+      border-radius: 360px;
+      font-size: 14px;
+      font-family: Verdana, serif;
+      color: rgb(230, 230, 230);
+      margin-top: auto;
+
+
+      &:hover {
+        background: linear-gradient(90deg, rgba(141,62,242,1) 0%, rgba(103,52,234,1) 53%, rgba(63,54,244,1) 73%);
+        cursor: pointer;
+      }
+    }
+  }
+
+  & h2 {
+    color: rgb(230, 230, 230);
+    font-size: 30px;
+    font-family: "Verdana", serif;
+  }
+}
+
+#signature {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1rem;
+  font-family: Verdana, serif;
+  color: rgb(230, 230, 230);
+}

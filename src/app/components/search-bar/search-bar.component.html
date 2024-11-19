@@ -1,0 +1,14 @@
+<body>
+<div id="input-container">
+  <div id="search-icon"></div>
+  <input type="text" placeholder="Search in recent documents" [(ngModel)]="searchInput">
+</div>
+<div class="output-container">
+  @for (recentDocument of recentDocuments | filterRecentDocuments : searchInput(); track recentDocument.id) {
+    <div  (click)="navigateToEditDocument(recentDocument.id)" class="output-container__item">
+      <div class="document-mark-icon"></div>
+      <label>{{ recentDocument.name }}</label>
+    </div>
+  }
+</div>
+</body>

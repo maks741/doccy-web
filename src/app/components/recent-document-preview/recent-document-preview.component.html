@@ -1,0 +1,11 @@
+<body routerLink="/{{ userName() }}/documents/{{ documentId() }}">
+<div>
+  <p [textContent]="documentContent()"></p>
+</div>
+<div class="document-info-container">
+  <label [textContent]="documentName()"></label>
+  <div id="document-mark-icon"></div>
+  <div id="shared-icon"></div>
+  <div id="options" (keyup)="removeFromRecentDocuments($event)"></div>
+</div>
+</body>

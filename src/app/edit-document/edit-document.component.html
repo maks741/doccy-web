@@ -1,0 +1,15 @@
+<body>
+<header>
+  <div [routerLink]="['/', userName]" id="logo"></div>
+  <p>doccy</p>
+  <app-profile-manager />
+</header>
+<div class="document-ui">
+  <div class="document-pages-container">
+    <app-document-page [content]="documentPageSignal().content"/>
+  </div>
+</div>
+<div id="signature">
+  <label>Виконав Козак Максим, група ІН-201</label>
+</div>
+</body>

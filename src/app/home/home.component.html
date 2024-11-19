@@ -1,0 +1,31 @@
+<body>
+<header>
+  <div id="logo"></div>
+  <p>doccy</p>
+  <app-search-bar />
+  <app-profile-manager />
+</header>
+<div id="sample-documents" class="documents-preview-section">
+  <div class="document-preview-container-cover">
+    <label>Create document</label>
+    <div id="document-samples-preview-container" class="documents-preview-container">
+      @for(documentSample of documentSamples(); track documentSample.id) {
+        <app-sample-document-preview [userName]="username" [documentId]="documentSample.id" [documentName]="documentSample.name" [documentContent]="documentSample.content" />
+      }
+    </div>
+  </div>
+</div>
+<div class="documents-preview-section">
+  <div class="document-preview-container-cover">
+    <label>Recent documents</label>
+    <div class="documents-preview-container">
+      @for(recentDocument of recentDocuments(); track recentDocument.id) {
+        <app-recent-document-preview [userName]="username" [documentId]="recentDocument.id" [documentName]="recentDocument.name" [documentContent]="recentDocument.content" />
+      }
+    </div>
+  </div>
+</div>
+<div id="signature">
+  <label>Виконав Козак Максим, група ІН-201</label>
+</div>
+</body>

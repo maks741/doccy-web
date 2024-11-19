@@ -1,0 +1,13 @@
+<body>
+<label id="signature">Виконав Козак Максим, група ІН-201</label>
+<div id="login">
+  <div id="login__form">
+    <h2>Log in to system</h2>
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" id="login__form_inputs">
+      <input autocomplete="off" name="inputUsername" type="text" placeholder="Username" ngModel required>
+      <input autocomplete="off" name="inputPassword" type="text" placeholder="Password" ngModel required>
+      <input value="Log in" type="submit">
+    </form>
+  </div>
+</div>
+</body>

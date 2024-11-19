@@ -1,0 +1,23 @@
+body {
+  background-color: rgb(250, 250, 250);
+  width: 50vw;
+  height: 70rem;
+  border: 2px solid rgb(200, 200, 200);
+  border-radius: 5px;
+}
+
+textarea {
+  $margin: 3rem;
+  width: calc(100% - 2 * $margin);
+  height: calc(100% - 2 * $margin);
+  margin: $margin;
+
+  background: transparent;
+  outline: none;
+  border: none;
+  resize: none;
+
+  font-size: 1.3rem;
+  font-family: Verdana, serif;
+  color: rgb(40, 40, 40);
+}
