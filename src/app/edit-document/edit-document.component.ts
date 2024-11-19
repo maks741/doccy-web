@@ -1,4 +1,4 @@
-import {Component, inject, signal, WritableSignal} from '@angular/core';
+import {Component, inject, OnInit, signal, WritableSignal} from '@angular/core';
 import {ActivatedRoute, RouterLink} from '@angular/router';
 import {DocumentService} from '../services/document.service';
 import {Document} from '../model/document.type';

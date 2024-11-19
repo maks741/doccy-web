@@ -12,9 +12,9 @@ import {FormsModule, NgForm} from '@angular/forms';
 })
 export class AuthenticationComponent {
   onSubmit(form: NgForm) {
-    const { inputUsername, inputPassword } = form.value;
+    const { inputUsername } = form.value;
 
-    if(!inputUsername || !inputPassword) {
+    if(!inputUsername) {
       return;
     }
 

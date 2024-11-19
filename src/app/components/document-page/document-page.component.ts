@@ -1,4 +1,4 @@
-import {Component, input, InputSignal, OnInit} from '@angular/core';
+import {Component, input, InputSignal} from '@angular/core';
 
 @Component({
   selector: 'app-document-page',
@@ -7,9 +7,6 @@ import {Component, input, InputSignal, OnInit} from '@angular/core';
   templateUrl: './document-page.component.html',
   styleUrl: './document-page.component.scss'
 })
-export class DocumentPageComponent implements OnInit {
-  ngOnInit(): void {
-      alert(this.content);
-  }
+export class DocumentPageComponent {
   content: InputSignal<string> = input.required();
 }
