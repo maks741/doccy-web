@@ -96,6 +96,10 @@ body {
         cursor: pointer;
       }
     }
+
+    & input[type="submit"]:disabled {
+      background-color: gray;
+    }
   }
 
   & h2 {

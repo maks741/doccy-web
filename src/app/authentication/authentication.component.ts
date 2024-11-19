@@ -1,23 +1,20 @@
-import {Component} from '@angular/core';
-import {FormsModule, NgForm} from '@angular/forms';
+import {Component, signal, WritableSignal} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-authentication',
   standalone: true,
   imports: [
-    FormsModule
+    FormsModule,
+    RouterLink
   ],
   templateUrl: './authentication.component.html',
   styleUrl: './authentication.component.scss'
 })
 export class AuthenticationComponent {
-  onSubmit(form: NgForm) {
-    const { inputUsername, inputPassword } = form.value;
 
-    if(!inputUsername || !inputPassword) {
-      return;
-    }
+  protected inputUsername: WritableSignal<string> = signal("");
+  protected inputPassword: WritableSignal<string> = signal("");
 
-    window.location.href = `/${inputUsername}`;
-  }
 }

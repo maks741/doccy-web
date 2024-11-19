@@ -21,7 +21,7 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class HomeComponent {
   private route: ActivatedRoute = inject(ActivatedRoute);
-  username: string = this.route.snapshot.params["user-name"];
+  protected username: string = this.route.snapshot.params["user-name"];
   private documentService: DocumentService = inject(DocumentService);
 
   protected recentDocuments: WritableSignal<DocumentPreview[]> = signal(this.documentService.getRecentDocuments());
