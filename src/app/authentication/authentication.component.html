@@ -5,6 +5,7 @@
     <h2>Log in to system</h2>
     <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" id="login__form_inputs">
       <input autocomplete="off" name="inputUsername" type="text" placeholder="Username" ngModel required>
+      <input autocomplete="off" name="inputPassword" type="text" placeholder="Password" ngModel required>
       <input value="Log in" type="submit">
     </form>
   </div>
